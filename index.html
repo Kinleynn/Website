@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Kinley Nichols - WebPage Final</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resume">View My Résumé</a></li>
+                        <li class="naci-item"><a href="scratch.html">Creative zone</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#learn">Learn More</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#resume">Lets get started</a>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="resume">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">View My Résumé</h2>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Education</h4>
+                        <p class="text-muted">Brigham Young University (BYU) High School with Trade School Enrollment</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Work Experience</h4>
+                        <p class="text-muted">Licensed Cosmetologist, Salon Assistant Intern</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Skills</h4>
+                        <p class="text-muted">Client Experience and Hospitality, Hairstyling, Time Management and Scheduling, Attention to Detail, Canva and Visual Design Tools</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+ <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="creative">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Creative Zone</h2>
+                        <a class="btn btn-primary btn-xl text-uppercase" href="scratch.html">HOBBIES</a>
+                    </div>
+                </div>
+    </section>
+        <!-- About-->
+        <section class="page-section" id="learn">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Learn More</h2>
+        <h3 class="section-subheading text-muted">Lets Play a Game</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Riddle Generator Section -->
+  <section class="page-section bg-light" id="riddle">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Riddle Generator</h2>
+        <div class="riddle-box">
+          <div id="riddle">Click the button for a riddle!</div>
+          <div id="answer"></div>
+          <button onclick="generateRiddle()">Get Riddle</button>
+        </div>
+        <a href="index.html">← Home</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const riddles = [
+      { q: "What has to be broken before you can use it?", a: "An egg." },
+      { q: "I speak without a mouth and hear without ears. What am I?", a: "An echo." },
+      { q: "What gets wetter as it dries?", a: "A towel." },
+      { q: "I have branches, but no fruit, trunk or leaves. What am I?", a: "A bank." },
+      { q: "What can't talk but will reply when spoken to?", a: "An echo." }
+    ];
+
+    function generateRiddle() {
+      const r = riddles[Math.floor(Math.random() * riddles.length)];
+      document.getElementById('riddle').textContent = r.q;
+      document.getElementById('answer').textContent = "Click again to reveal the answer...";
+      setTimeout(() => {
+        document.getElementById('answer').textContent = r.a;
+      }, 2500);
+    }
+  </script>
+<!-- Team-->
+<section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">The Creator</h2>
+                    <h3 class="section-subheading text-muted">Trying her best</h3>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                          
+                            <h4>Kinley Nichols</h4>
+                            <p class="text-muted">Student</p>
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Brigham Young University Student. Pre-Business Major striving to get into the Experience Design and Managment Program.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Kinley Nichols 2025</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                    <div class="col-lg-4 text-lg-end">
+                    </div>
+                </div>
+            </div>
+     
+
+
+
+ 
